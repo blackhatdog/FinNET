@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>FinNet -Dashboard</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        p
+{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+     </style>
+</head>
+<body>
+    <center>
+    <h1>FinNET</h1>
+    <div class="topnav">
+        <a class="active"href="/add_transaction">Add Transaction</a>
+        <a href="/credits">Credits</a>
+        <a href="/debits">Debits</a>
+        <a href="/about">About</a>
+        <a href="/logout">Logout</a>
+
+
+      </div>
+    <h2>All Transactions</h2>
+    <h2>Current Balance: {{ balance }}</h2>
+    <br>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Mode</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.date }}</td>
+            <td>{{ transaction.name }}</td>
+            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.mode }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <br>
+</center>
+    
+</body>
+</html>
