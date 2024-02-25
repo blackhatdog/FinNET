@@ -1,2 +1,2 @@
 # FinNET
-Free , lightweight , Open Source and basic finance management software using python , flask and TinyDB
+Free, Lightweight, Open Source and Basic Finance Management Software using Python, Flask and TinyDB
